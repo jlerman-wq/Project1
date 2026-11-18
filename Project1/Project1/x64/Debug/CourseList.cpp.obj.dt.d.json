@@ -1,0 +1,12 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\mcraft4\\desktop\\project1-main\\project1\\project1\\courselist.cpp",
+        "ProvidedModule": "",
+        "Includes": [
+            "c:\\users\\mcraft4\\desktop\\project1-main\\project1\\project1\\courselist.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -1,0 +1,69 @@
+﻿  StudentList.cpp
+C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(15,10): error C3646: 'student': unknown override specifier
+  (compiling source file 'StudentList.cpp')
+  
+C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(15,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'StudentList.cpp')
+  
+C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(19,7): error C2061: syntax error: identifier 'Student'
+  (compiling source file 'StudentList.cpp')
+  
+C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(20,39): error C2969: syntax error: ';': expected member function definition to end with '}'
+  (compiling source file 'StudentList.cpp')
+  
+C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(21,9): error C2143: syntax error: missing ';' before '&'
+  (compiling source file 'StudentList.cpp')
+  
+C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(21,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'StudentList.cpp')
+  
+C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(22,2): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+  (compiling source file 'StudentList.cpp')
+  
+C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(29,18): error C2061: syntax error: identifier 'Student'
+  (compiling source file 'StudentList.cpp')
+  
+C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(20,13): error C2065: 'newStudent': undeclared identifier
+  (compiling source file 'StudentList.cpp')
+  
+C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(20,31): error C2065: 'newNext': undeclared identifier
+  (compiling source file 'StudentList.cpp')
+  
+C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(25,8): error C2059: syntax error: 'inline function header'
+  (compiling source file 'StudentList.cpp')
+  
+C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(20,39): error C2630: ';' found in what should be a comma-separated list
+  (compiling source file 'StudentList.cpp')
+  
+C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(20,5): error C2614: 'Node': illegal member initialization: 'student' is not a base or member
+  (compiling source file 'StudentList.cpp')
+  
+C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(27,3): error C2534: 'Node': constructor cannot return a value
+  (compiling source file 'StudentList.cpp')
+      C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(12,7):
+      see declaration of 'Node'
+  
+C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(27,3): error C2562: 'Node::Node': 'void' function returning a value
+  (compiling source file 'StudentList.cpp')
+      C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(19,2):
+      see declaration of 'Node::Node'
+  
+C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(31,3): error C2065: 'student': undeclared identifier
+  (compiling source file 'StudentList.cpp')
+  
+C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(31,13): error C2065: 'newStudent': undeclared identifier
+  (compiling source file 'StudentList.cpp')
+  
+C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(47,44): error C2969: syntax error: ';': expected member function definition to end with '}'
+  (compiling source file 'StudentList.cpp')
+  
+C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(48,18): error C2061: syntax error: identifier 'Student'
+  (compiling source file 'StudentList.cpp')
+  
+C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(51,26): error C2061: syntax error: identifier 'string'
+  (compiling source file 'StudentList.cpp')
+  
+C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.h(52,29): error C2061: syntax error: identifier 'string'
+  (compiling source file 'StudentList.cpp')
+  
+C:\Users\mcraft4\Desktop\Project1-main\Project1\Project1\StudentList.cpp(2,1): error C1004: unexpected end-of-file found

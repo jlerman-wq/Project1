@@ -139,7 +139,6 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Downloads\Main.cpp" />
     <ClCompile Include="Class.cpp" />
     <ClCompile Include="CourseList.cpp" />
     <ClCompile Include="Student.cpp" />
