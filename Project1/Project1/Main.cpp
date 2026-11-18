@@ -1,17 +1,19 @@
 /*
 	Lerman, Joshua
 
+
 	Fall 2026
 	CS A250 - C++ 2
 
 	Capstone Lab: Transcripts
 */
 
+#include "Course.h"
 #include "CourseList.h"
+#include "Student.h"
 #include "StudentList.h"
-
-// Added for test cases
 #include <iostream>
+
 
 using namespace std;
 
@@ -27,41 +29,86 @@ int main()
 	// Use the same prefix with different numbers for two courses,
 	// and a different prefix for the third course.
 	// Call setCourseInfo() to initialize each object.
-	 
+	Course course1, course2, course3;
+	course1.setCourseInfo("CS", 100, 3);
+	course2.setCourseInfo("MATH", 101, 3);
+	course3.setCourseInfo("CS", 101, 4);
+	
 
 	// Test getCoursePrefix(), getCourseNumber(), and getCourseUnits().
 	// Display the expected and actual values.
+	cout << "Expected Prefix: CS, Actual: " << course1.getCoursePrefix() << endl;
+	cout << "Expected Number: 100, Actual: " << course1.getCourseNumber() << endl;
+	cout << "Expected Units: 3, Actual: " << course1.getCourseUnits() << endl;
 
 
 	// Test setCourseInfo() again by changing an existing course.
 	// Verify that all three member variables were updated.
+	course1.setCourseInfo("CS", 102, 4);
+	cout << "After update - Prefix: " << course1.getCoursePrefix() << ", Number: " << course1.getCourseNumber() << ", Units: " << course1.getCourseUnits() << std::endl;
 
 
 	// Test operator<() with different course prefixes.
+	course1.setCourseInfo("BIO", 100, 3);
+	course2.setCourseInfo("CS", 100, 3);
+
+	cout << "Is BIO 100 < CS 100? Expected: 1, Actual: " << (course1 < course2) << endl;
+
+	cout << "Is CS 100 < BIO 100? Expected: 0, Actual: " << (course2 < course1) << endl;
 
 
 	// Test operator<() with matching prefixes and different numbers.
+
+	course1.setCourseInfo("CS", 100, 3);
+	course2.setCourseInfo("CS", 101, 3);
+
+	cout << "Is CS 100 < CS 101? Expected: 1, Actual: " << (course1 < course2) << endl;
+
+	cout << "Is CS 101 < CS 100? Expected: 0, Actual: " << (course2 < course1) << endl;
 
 
 	// Test operator<() with matching prefixes and numbers.
 	// Verify that neither course is less than the other,
 	// even when their units differ.
+	course1.setCourseInfo("CS", 100, 3);
+	course2.setCourseInfo("CS", 100, 4);
+	course3.setCourseInfo("CS", 100, 2);
 
+	cout << "Is CS 100 (3 units) < CS 100 (4 units)? Expected: 0, Actual: " << (course1 < course2) << endl;
+	
+	cout << "Is CS 100 (4 units) < CS 100 (3 units)? Expected: 0, Actual: " << (course2 < course1) << endl;
+
+	cout << "Is CS 100 (3 units) < CS 100 (2 units)? Expected: 0, Actual: " << (course1 < course3) << endl;
+
+	cout << "Is CS 100 (2 units) < CS 100 (3 units)? Expected: 0, Actual: " << (course3 < course1) << endl;
 
 	// ===== COURSELIST =====
 
 	// Create an empty CourseList object and test printCourses().
+	course1.setCourseInfo("CS", 100, 3);
+	course2.setCourseInfo("MATH", 101, 3);
+	course3.setCourseInfo("CS", 101, 4);
+	cout << endl;
+	cout << "Testing printCourses() on an empty CourseList:" << endl;
+	CourseList courseList;
+	courseList.printCourses();
 
 
 	// Test addCourse() by adding courses in an unsorted order.
+	courseList.addCourse(course2);
+	courseList.addCourse(course1);
+	courseList.addCourse(course3);
 
 
 	// Add a duplicate course with the same prefix and number.
+	courseList.addCourse(course2);
+	courseList.addCourse(course2);
 
 
 	// Test printCourses() again.
 	// Verify that courses appear in sorted order without duplicates.
-
+	cout << "Testing printCourses() after adding courses:" << endl;
+	courseList.printCourses();
 
 	// ===== STUDENT =====
 

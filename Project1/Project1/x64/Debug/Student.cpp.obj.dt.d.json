@@ -1,0 +1,12 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\jlerman\\desktop\\project1\\project1\\student.cpp",
+        "ProvidedModule": "",
+        "Includes": [
+            "c:\\users\\jlerman\\desktop\\project1\\project1\\student.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
