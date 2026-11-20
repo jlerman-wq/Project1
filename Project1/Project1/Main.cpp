@@ -65,87 +65,176 @@ int main()
 
 	// ===== STUDENT =====
 
-	// Create a multimap<Course, char> containing several courses
-	// and grades. Use courses with different unit values.
+	  // Create a multimap containing several courses and grades
+    Course c1("CS", 101, 3);
+    Course c2("MATH", 200, 4);
+    Course c3("ENG", 101, 3);
+    Course c4("CS", 150, 2);
+
+    multimap<Course, char> courses;
+
+    courses.insert({c1, 'A'});
+    courses.insert({c2, 'B'});
+    courses.insert({c3, 'F'});
+    courses.insert({c4, 'C'});
+
+    // Create Student with paid tuition
+    Student student1(1001, "David", "Smith", true, courses);
+
+    // Create Student with unpaid tuition
+    Student student2(1002, "John", "Doe", false, courses);
+
+    // Create Student with empty courses
+    multimap<Course, char> emptyCourses;
+    Student student3(1003, "Alex", "Brown", true, emptyCourses);
+
+    // Test getID(), getFirstName(), getLastName()
+    cout << "\n===== GETTERS =====\n";
+
+    cout << "Expected ID: 1001\n";
+    cout << "Actual ID: " << student1.getID() << endl;
+
+    cout << "Expected First Name: David\n";
+    cout << "Actual First Name: " << student1.getFirstName() << endl;
+
+    cout << "Expected Last Name: Smith\n";
+    cout << "Actual Last Name: " << student1.getLastName() << endl;
+
+    // Test getName()
+    cout << "\n===== GET NAME =====\n";
+
+    string first, last;
+    student1.getName(first, last);
+
+    cout << "First Name: " << first << endl;
+    cout << "Last Name: " << last << endl;
+
+    // Test getNumberOfCourse()
+    cout << "\n===== NUMBER OF COURSES =====\n";
+
+    cout << "Student 1 Expected: 4\n";
+    cout << "Student 1 Actual: " << student1.getNumberOfCourse() << endl;
+
+    cout << "Student 3 Expected: 0\n";
+    cout << "Student 3 Actual: " << student3.getNumberOfCourse() << endl;
+
+    // Test getCoursesCompleted()
+    cout << "\n===== GET COURSES COMPLETED =====\n";
+
+    multimap<Course, char> returnedCourses =
+        student1.getCoursesCompleted();
+
+    for (auto iter = returnedCourses.begin();
+         iter != returnedCourses.end(); ++iter)
+    {
+        cout << iter->first.getCoursePrefix() << " "
+             << iter->first.getCourseNumber() << " Grade: "
+             << iter->second << endl;
+    }
+
+    // Modify returned multimap
+    returnedCourses.clear();
+
+    cout << "Returned multimap size: "
+         << returnedCourses.size() << endl;
+
+    cout << "Original Student course count: "
+         << student1.getCoursesCompleted().size() << endl;
+
+    // Test isTuitionPaid()
+    cout << "\n===== TUITION STATUS =====\n";
+
+    cout << "Student 1 Expected: 1\n";
+    cout << "Student 1 Actual: " << student1.isTuitionPaid() << endl;
+
+    cout << "Student 2 Expected: 0\n";
+    cout << "Student 2 Actual: " << student2.isTuitionPaid() << endl;
+
+    // Test getUnitCompleted()
+    cout << "\n===== TOTAL UNITS =====\n";
+
+    cout << "Student 1 Expected: 12\n";
+    cout << "Student 1 Actual: " << student1.getUnitCompleted() << endl;
+
+    cout << "Student 3 Expected: 0\n";
+    cout << "Student 3 Actual: " << student3.getUnitCompleted() << endl;
+
+    // Test isCourseCompleted()
+    cout << "\n===== COURSE COMPLETED =====\n";
+
+    cout << "CS 101 Expected: 1\n";
+    cout << "Actual: " << student1.isCourseCompleted("CS", 101) << endl;
+
+    cout << "CS 200 Expected: 0\n";
+    cout << "Actual: " << student1.isCourseCompleted("CS", 200) << endl;
+
+    cout << "MATH 101 Expected: 0\n";
+    cout << "Actual: " << student1.isCourseCompleted("MATH", 101) << endl;
 
 
-	// Create a Student object with paid tuition using the
-	// parameterized constructor and the populated multimap.
+    // Test calculateGPA()
+    cout << "\n===== GPA =====\n";
 
+    cout << "Expected GPA: 2.5\n";
+    cout << "Actual GPA: " << student1.calculateGPA() << endl;
 
-	// Create another Student object with unpaid tuition.
+    cout << "Empty Student Expected GPA: 0.0\n";
+    cout << "Actual GPA: " << student3.calculateGPA() << endl;
 
+    // Test billingAmount()
+    cout << "\n===== BILLING AMOUNT =====\n";
 
-	// Create a Student object with an empty course multimap.
+    double tuitionRate = 150.0;
 
+    // 4 courses * $150 = $600
+    cout << "Expected: $600\n";
+    cout << "Actual: $" << student2.billingAmount(tuitionRate) << endl;
 
-	// Test getID(), getFirstName(), and getLastName().
-	// Display the expected and actual values.
+    // Test setStudent()
+    cout << "\n===== SET STUDENT =====\n";
 
+    student3.setStudent(student1);
 
-	// Test getName() using two string variables.
-	// Display both variables after the function call.
+    cout << "Expected ID: 1001\n";
+    cout << "Actual ID: " << student3.getID() << endl;
 
+    cout << "Expected First Name: David\n";
+    cout << "Actual First Name: " << student3.getFirstName() << endl;
 
-	// Test getNumberOfCourses() for students with and without courses.
+    cout << "Expected Last Name: Smith\n";
+    cout << "Actual Last Name: " << student3.getLastName() << endl;
 
+    cout << "Expected Courses: 4\n";
+    cout << "Actual Courses: "
+         << student3.getCoursesCompleted().size() << endl;
 
-	// Test getCoursesCompleted().
-	// Store the returned multimap and display its courses and grades.
+    cout << "Expected Tuition Paid: 1\n";
+    cout << "Actual Tuition Paid: " << student3.isTuitionPaid() << endl;
 
+    // Test printStudent()
+    cout << "\n===== PRINT STUDENT =====\n";
 
-	// Modify the returned multimap.
-	// Verify that the Student object's courses remain unchanged.
+    student1.printStudent();
 
+    // Test printStudentInfo() with paid tuition
+    cout << "\n===== PAID TUITION INFO =====\n";
 
-	// Test isTuitionPaid() for paid and unpaid tuition.
+    student1.printStudentInfo(tuitionRate);
 
+    // Test printStudentInfo() with unpaid tuition
+    cout << "\n===== UNPAID TUITION INFO =====\n";
 
-	// Test getUnitsCompleted() for students with and without courses.
+    student2.printStudentInfo(tuitionRate);
 
+    // Test printStudentInfo() with no courses
+    cout << "\n===== EMPTY STUDENT INFO =====\n";
 
-	// Test isCourseCompleted() with a matching prefix and number.
+    Student emptyStudent(1004, "Jane", "White", false, emptyCourses);
 
+    emptyStudent.printStudentInfo(tuitionRate);
 
-	// Test isCourseCompleted() with a matching prefix but a
-	// different number, and with a matching number but a
-	// different prefix. Both searches should return false.
-
-
-	// Test isCourseCompleted() for a student with no courses.
-
-
-	// Test calculateGPA() using a GPA calculated independently.
-	// Include an F grade in at least one test.
-
-
-	// Test calculateGPA() for a student with no courses.
-	// The expected result is 0.0.
-
-
-	// Test billingAmount() using a chosen tuition rate.
-	// Verify that the calculation uses the number of courses.
-
-
-	// Test setStudent() by copying one Student object's
-	// information into another existing Student object.
-	// Verify that all information was copied.
-
-
-	// Test printStudent().
-
-
-	// Test printStudentInfo() for paid tuition.
-	// Verify that grades and GPA are displayed.
-
-
-	// Test printStudentInfo() for unpaid tuition.
-	// Verify that grades are replaced with ***, GPA is hidden,
-	// and the hold message and amount due are displayed.
-
-
-	// Test printStudentInfo() for a student with no courses.
-
+    return 0;
+}
 
 	// ===== NODE =====
 
