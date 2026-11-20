@@ -1,0 +1,5 @@
+﻿  Main.cpp
+C:\Users\drago\source\repos\jlerman-wq\Project1\Project1\Project1\Student.h(32,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Main.cpp')
+  
+  Project1.vcxproj -> C:\Users\drago\source\repos\jlerman-wq\Project1\Project1\x64\Debug\Project1.exe
