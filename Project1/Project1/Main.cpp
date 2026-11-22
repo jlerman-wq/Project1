@@ -324,6 +324,11 @@ int main()
 		node1->setNext(nullptr);
 		cout << "Node 1 next pointer set to nullptr." << endl;
 
+	delete node1;
+	delete node2;
+	node1 = nullptr;
+	node2 = nullptr;
+
 	// ===== STUDENTLIST =====
 
 		cout << "\n===== STUDENTLIST =====\n";
@@ -417,7 +422,8 @@ int main()
 
 	// Clear the list again, then clear the already empty list.
 		studentList.clearStudentList();
-		cout << "clearStudentList() called on populated StudentList." << endl;
+		studentList.clearStudentList();
+		cout << "clearStudentList() called on already cleared StudentList." << endl;
 
 	// Test the StudentList destructor by creating a local
 	// StudentList inside a separate block, adding students,
