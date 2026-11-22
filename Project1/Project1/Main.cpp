@@ -139,7 +139,7 @@ int main()
     Student student1(1001, "David", "Smith", true, courses);
 
     // Create Student with unpaid tuition
-    Student student2(1002, "John", "Doe", false, courses);
+    Student student2(1002, "John", "Smith", false, courses);
 
     // Create Student with empty courses
     multimap<Course, char> emptyCourses;
@@ -232,7 +232,7 @@ int main()
     // Test calculateGPA()
     cout << "\n===== GPA =====\n";
 
-    cout << "Expected GPA: 2.5\n";
+    cout << "Expected GPA: 2.33\n";
     cout << "Actual GPA: " << student1.calculateGPA() << endl;
 
     cout << "Empty Student Expected GPA: 0.0\n";
