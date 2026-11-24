@@ -314,7 +314,7 @@ int main()
 
 	// Test setNext() by linking the first node to the second node.
 		node1->setNext(node2);
-		cout << "Node 1 next pointer set to Node 2." << endl;
+		cout << "Node 1 next pointer set to Node 2." << (node1->getNext() == node2) << endl;
 
 	// Test getNext() and verify that it returns the expected pointer.
 		node1->getNext()->getStudent().printStudent();
@@ -322,7 +322,7 @@ int main()
 
 	// Set the first node's next pointer to nullptr and verify it.
 		node1->setNext(nullptr);
-		cout << "Node 1 next pointer set to nullptr." << endl;
+		cout << "Node 1 next pointer set to nullptr." << (node1->getNext() == nullptr) << endl;
 
 	delete node1;
 	delete node2;
@@ -331,10 +331,11 @@ int main()
 
 	// ===== STUDENTLIST =====
 
-		cout << "\n===== STUDENTLIST =====\n";
+		cout << "\n===== STUDENT LIST =====\n";
 
 	// Create an empty StudentList object.
 		StudentList studentList;
+		cout << "Empty StudentList created." << endl;
 
 	// Test getNoOfStudents(). The expected result is 0.
 		studentList.getNoOfStudents();
@@ -418,7 +419,11 @@ int main()
 	// Add a student after clearing the list.
 	// Verify that insertion and printing still work correctly.
 		studentList.addStudent(student1);
+
+		cout << "Expected number of students: 1, Actual: " << studentList.getNoOfStudents() << endl;
+
 		cout << "Student 1 added to StudentList after clearing." << endl;
+		studentList.printStudentByID(1001, tuitionRate);
 
 	// Clear the list again, then clear the already empty list.
 		studentList.clearStudentList();
@@ -429,12 +434,14 @@ int main()
 	// StudentList inside a separate block, adding students,
 	// and allowing the object to go out of scope without
 	// explicitly calling clearStudentList().
-		StudentList destructorTestList;
-		destructorTestList.addStudent(student1);
-		destructorTestList.addStudent(student2);
+		{
+			StudentList destructorTestList;
+			destructorTestList.addStudent(student1);
+			destructorTestList.addStudent(student2);
 
-		cout << "Students before destructor test: "
-			<< destructorTestList.getNoOfStudents() << endl;
+			cout << "Students before destructor test: "
+				<< destructorTestList.getNoOfStudents() << endl;
+		}
 
 	cout << endl;
 	system("Pause");
